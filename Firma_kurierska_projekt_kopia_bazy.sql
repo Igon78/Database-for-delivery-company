@@ -1,0 +1,1133 @@
+--------------------------------------------------------
+--  File created - sobota-stycznia-29-2022   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence AD_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."AD_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 10 START WITH 140 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence DT_ID_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."DT_ID_SEQ"  MINVALUE 1 MAXVALUE 1000 INCREMENT BY 10 START WITH 250 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence FI_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."FI_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 110 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence MG_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."MG_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 10 START WITH 60 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence NA_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."NA_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 10 START WITH 60 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence OD_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."OD_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 10 START WITH 70 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence OP_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."OP_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 11 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence PA_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."PA_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 10 START WITH 190 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence PR_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."PR_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 10 START WITH 160 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence SKANER_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."SKANER_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 33 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Sequence ZM_ID_SEQUENCE
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "IE72954"."ZM_ID_SEQUENCE"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 7 NOCACHE  NOORDER  NOCYCLE   ;
+--------------------------------------------------------
+--  DDL for Table ADRESY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."ADRESY" 
+   (	"AD_ID" NUMBER(*,0), 
+	"ULICA" VARCHAR2(30 CHAR), 
+	"NUMER_DOMU" VARCHAR2(6 CHAR), 
+	"NUMER_MIESZKANIA" VARCHAR2(6 CHAR), 
+	"MIEJSCOWOSC" VARCHAR2(50 BYTE), 
+	"KOD_POCZTOWY" VARCHAR2(10 BYTE), 
+	"KRAJ" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FIRMY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."FIRMY" 
+   (	"FI_ID" NUMBER(*,0), 
+	"NAZWA" VARCHAR2(50 CHAR), 
+	"NIP" VARCHAR2(10 CHAR)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table KURIERZY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."KURIERZY" 
+   (	"PR_ID" NUMBER(*,0), 
+	"KU_ID" NUMBER(*,0), 
+	"LICENCJA_TRANSPORTOWA" NUMBER(*,0), 
+	"PO_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MAGAZYNIERZY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."MAGAZYNIERZY" 
+   (	"PR_ID" NUMBER(*,0), 
+	"MA_ID" NUMBER(*,0), 
+	"NUMER_SKANERA" NUMBER(*,0), 
+	"MA_ID1" NUMBER(*,0), 
+	"MG_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MAGAZYNY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."MAGAZYNY" 
+   (	"MG_ID" NUMBER(*,0), 
+	"NAZWA" VARCHAR2(30 CHAR), 
+	"POWIERZCHNIA(M^2)" NUMBER(8,2), 
+	"WYSOKOSC(M)" NUMBER(4,2)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table NADAWCY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."NADAWCY" 
+   (	"NA_ID" NUMBER(*,0), 
+	"E-MAIL" VARCHAR2(50 CHAR), 
+	"NR_TELEFONU" VARCHAR2(30 CHAR), 
+	"AD_ID" NUMBER(*,0), 
+	"OP_ID" NUMBER(*,0), 
+	"FI_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ODBIORCY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."ODBIORCY" 
+   (	"OD_ID" NUMBER(*,0), 
+	"E-MAIL" VARCHAR2(50 CHAR), 
+	"NR_TELEFONU" VARCHAR2(30 CHAR), 
+	"AD_ID" NUMBER(*,0), 
+	"FI_ID" NUMBER(*,0), 
+	"OP_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table OSOBY_PRYWATNE
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."OSOBY_PRYWATNE" 
+   (	"OP_ID" NUMBER(*,0), 
+	"IMIE" VARCHAR2(20 CHAR), 
+	"NAZWISKO" VARCHAR2(30 CHAR)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PACZKI
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."PACZKI" 
+   (	"PA_ID" NUMBER(*,0), 
+	"DLUGOSCCM)" NUMBER(5,2), 
+	"SZEROKOSC(CM)" NUMBER(5,2), 
+	"WYSOKOSC(CM)" NUMBER(5,2), 
+	"CZY_SZKLANE" CHAR(1 BYTE), 
+	"ZAM_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table POJAZDY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."POJAZDY" 
+   (	"PO_ID" NUMBER(*,0), 
+	"NUMER_REJESTRACYJNY" VARCHAR2(10 CHAR), 
+	"LADOWNOSC(M^3)" NUMBER(5,2), 
+	"MAKSYMALNA_WYSOKOSC(M)" NUMBER(4,2)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRACOWNICY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."PRACOWNICY" 
+   (	"PR_ID" NUMBER(*,0), 
+	"IMIE" VARCHAR2(20 CHAR), 
+	"NAZWISKO" VARCHAR2(30 CHAR)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRACOWNICY-ZMIANY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."PRACOWNICY-ZMIANY" 
+   (	"PRACOWNICY_PR_ID" NUMBER(*,0), 
+	"ZMIANY_ZM_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ZAMOWIENIA
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."ZAMOWIENIA" 
+   (	"ZAM_ID" NUMBER(*,0), 
+	"WAGA(KG)" NUMBER(5,2), 
+	"DATA_NADANIA" DATE, 
+	"DATA_ODEBRANIA" DATE, 
+	"KOSZT_PRZESYLKI" NUMBER(6,2), 
+	"RODZAJ_PLATNOSCI" VARCHAR2(20 CHAR), 
+	"WARTOSC_TOWARU" NUMBER(25,2), 
+	"MG_ID" NUMBER(*,0), 
+	"KU_ID" NUMBER(*,0), 
+	"OD_ID" NUMBER(*,0), 
+	"NA_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ZMIANY
+--------------------------------------------------------
+
+  CREATE TABLE "IE72954"."ZMIANY" 
+   (	"ZM_ID" NUMBER(*,0), 
+	"CZAS_ZAKONCZENIA" DATE, 
+	"CZAS_ROZPOCZECIA" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for View ZAD_1
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_1" ("IMIE", "DZIEN DOSTAWY", "NUMER_REJESTRACYJNY") AS 
+  (SELECT pr.imie, TO_CHAR(zam.data_nadania+1, 'DAY') AS "DZIEN DOSTAWY", po.numer_rejestracyjny
+FROM PACZKI pa, zamowienia zam, kurierzy ku, pracownicy pr, pojazdy po
+WHERE pa.zam_id=zam.zam_id AND zam.ku_id=ku.ku_id AND pr.pr_id=ku.pr_id AND
+ku.po_id=po.po_id AND pa.pa_id=60)
+;
+--------------------------------------------------------
+--  DDL for View ZAD_2
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_2" ("Miasto", "Objêtoœæ") AS 
+  (SELECT SUBSTR(nazwa,1,3) || '_' || TO_CHAR(mg_id) AS "Miasto", 
+ROUND("POWIERZCHNIA(M^2)"*"WYSOKOSC(M)",0) AS "Objêtoœæ"
+FROM magazyny
+WHERE "POWIERZCHNIA(M^2)"*"WYSOKOSC(M)">=160000)
+;
+--------------------------------------------------------
+--  DDL for View ZAD_3
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_3" ("PLATNOSC", "SREDNIA", "MAKSIMUM", "SUMA") AS 
+  SELECT rodzaj_platnosci, ROUND(AVG(wartosc_towaru),2), MAX(wartosc_towaru), SUM(wartosc_towaru)
+FROM ZAMOWIENIA
+GROUP BY rodzaj_platnosci
+ORDER BY AVG(wartosc_towaru) DESC
+;
+--------------------------------------------------------
+--  DDL for View ZAD_4
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_4" ("NAZWA", "E-MAIL") AS 
+  SELECT fi.nazwa, od."E-MAIL"
+FROM odbiorcy od, firmy fi
+WHERE od.fi_id=fi.fi_id AND od.fi_id NOT IN (SELECT NVL(fi_id,0) FROM nadawcy)
+ORDER BY  fi.nazwa
+;
+--------------------------------------------------------
+--  DDL for View ZAD_5
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_5" ("CZY_SZKLANE", "na imie", "na nazwisko", "NR_TELEFONU", "ku imie", "ku nazwisko", "mg imie", "mg nazwisko") AS 
+  SELECT czy_szklane, na.imie AS "na imie", na.nazwisko as "na nazwisko", na.nr_telefonu,
+ku.imie as "ku imie", ku.nazwisko as "ku nazwisko", mg.imie as "mg imie", mg.nazwisko as "mg nazwisko"
+FROM (SELECT zam.zam_id, mg_id, ku_id, na_id, czy_szklane
+        FROM zamowienia zam,paczki pa
+        WHERE pa.zam_id=zam.zam_id) zam
+JOIN (SELECT na.na_id, op.imie, op.nazwisko, na.nr_telefonu 
+        FROM nadawcy na, osoby_prywatne op
+        WHERE na.op_id = op.op_id) na ON (na.na_id=zam.na_id)
+JOIN (SELECT ku_id, imie, nazwisko 
+        FROM kurierzy ku, pracownicy pr
+        WHERE ku.pr_id = pr.pr_id) ku ON (ku.ku_id=zam.ku_id)
+JOIN (SELECT mg.mg_id, imie, nazwisko
+        FROM magazyny mg, magazynierzy ma, pracownicy pr
+        WHERE ma.mg_id=mg.mg_id AND pr.pr_id=ma.pr_id 
+        AND ma_id1 IS NULL) mg ON (mg.mg_id=zam.mg_id)
+WHERE zam.zam_id=80
+;
+--------------------------------------------------------
+--  DDL for View ZAD_6
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_6" ("MG_ID", "NAZWA") AS 
+  SELECT mg_id, nazwa
+FROM magazyny mg
+WHERE NOT EXISTS (SELECT 'X' 
+                    FROM magazynierzy 
+                    WHERE mg_id =mg.mg_id AND ma_id1 IS NULL)
+;
+--------------------------------------------------------
+--  DDL for View ZAD_7
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_7" ("NAZWA", "ILOSC", "SREDNIA MAGAZYNU", "SREDNIA OGÓ£EM") AS 
+  SELECT mg.nazwa, COUNT(zam.zam_id) as "ILOSC", ROUND(AVG(wartosc_towaru),2) AS "SREDNIA MAGAZYNU",
+(SELECT ROUND(AVG(wartosc_towaru),2) FROM zamowienia) as "SREDNIA OGÓ£EM"
+FROM magazyny mg, zamowienia zam
+WHERE zam.mg_id=mg.mg_id
+GROUP BY mg.nazwa
+ORDER BY "ILOSC" DESC,"SREDNIA MAGAZYNU" DESC
+;
+--------------------------------------------------------
+--  DDL for View ZAD_8
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "IE72954"."ZAD_8" ("PR_ID", "IMIE", "NAZWISKO", "DZIEN", "GODZINA") AS 
+  SELECT pr_id,imie,nazwisko, MAX(czas_zakonczenia) AS "DZIEN", MAX(TO_CHAR(czas_zakonczenia, 'HH24')) AS "GODZINA"
+FROM zmiany zm, "PRACOWNICY-ZMIANY" pz,pracownicy pr
+WHERE zm.zm_id =zmiany_zm_id AND pr.pr_id=pracownicy_pr_id
+GROUP BY pr_id,imie,nazwisko
+;
+REM INSERTING into IE72954.ADRESY
+SET DEFINE OFF;
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('140','Wielka','100','150','Wielkie Miasto','99-900','Polska');
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('10','Friedrichstrasse','16',null,'Berlin','10115','Niemcy');
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('20','Heweliusza','56','54b','£ubianka','87-152',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('30','5 lipca','8',null,'Szczecin','16-402',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('40','Taczaka','1','51c','Poznan','60-748',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('50','Taczaka','115','42d','Poznan','60-748',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('60','Taczaka','6c','55','Poznan','60-748',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('70','Taczaka','15c',null,'Poznan','60-748',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('80','Aleje Jerozolimskie','6',null,'Warszawa','02-326',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('90','Herrengasse','66a',null,'Wieden','1110','Austria');
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('100','Staromiejska','91c','14','Bydgoszcz','85-000',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('110','Harcerska','44k','1','Lodz','70-445',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('120','Ogrodowa','1','5b','Torun','87-100',null);
+Insert into IE72954.ADRESY (AD_ID,ULICA,NUMER_DOMU,NUMER_MIESZKANIA,MIEJSCOWOSC,KOD_POCZTOWY,KRAJ) values ('130','Wyspianskiego','4a','5','Poznan','61-751',null);
+REM INSERTING into IE72954.FIRMY
+SET DEFINE OFF;
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('110','Wielkie Paki','9999999999');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('100','Nitstal','5166050129');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('101','Nike','3264777148');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('102','Nokia','5302574482');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('103','Franklin','1752977197');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('104','Danone','7478882409');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('105','Lipton','8557109625');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('106','Nestle','3833839454');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('107','Sony','7819389425');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('108','Empik','1055249700');
+Insert into IE72954.FIRMY (FI_ID,NAZWA,NIP) values ('109','TUI','9028144617');
+REM INSERTING into IE72954.KURIERZY
+SET DEFINE OFF;
+Insert into IE72954.KURIERZY (PR_ID,KU_ID,LICENCJA_TRANSPORTOWA,PO_ID) values ('110','1000','50','1');
+Insert into IE72954.KURIERZY (PR_ID,KU_ID,LICENCJA_TRANSPORTOWA,PO_ID) values ('120','1010','100','2');
+Insert into IE72954.KURIERZY (PR_ID,KU_ID,LICENCJA_TRANSPORTOWA,PO_ID) values ('130','1020','150','3');
+Insert into IE72954.KURIERZY (PR_ID,KU_ID,LICENCJA_TRANSPORTOWA,PO_ID) values ('140','1030','200','4');
+Insert into IE72954.KURIERZY (PR_ID,KU_ID,LICENCJA_TRANSPORTOWA,PO_ID) values ('150','1040','250',null);
+REM INSERTING into IE72954.MAGAZYNIERZY
+SET DEFINE OFF;
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('10','100','25',null,'10');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('20','110','26','100','10');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('30','120','27',null,'20');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('40','130','28','100','30');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('50','140',null,'100','40');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('60','150','29','100','40');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('70','160','30','120','50');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('80','170','31','110','10');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('90','180',null,'100','10');
+Insert into IE72954.MAGAZYNIERZY (PR_ID,MA_ID,NUMER_SKANERA,MA_ID1,MG_ID) values ('100','190','32','120','20');
+REM INSERTING into IE72954.MAGAZYNY
+SET DEFINE OFF;
+Insert into IE72954.MAGAZYNY (MG_ID,NAZWA,"POWIERZCHNIA(M^2)","WYSOKOSC(M)") values ('10','Poznan','2050,5','12,05');
+Insert into IE72954.MAGAZYNY (MG_ID,NAZWA,"POWIERZCHNIA(M^2)","WYSOKOSC(M)") values ('20','Warszawa','25000','11,07');
+Insert into IE72954.MAGAZYNY (MG_ID,NAZWA,"POWIERZCHNIA(M^2)","WYSOKOSC(M)") values ('30','Szczecin','16002,44','9,55');
+Insert into IE72954.MAGAZYNY (MG_ID,NAZWA,"POWIERZCHNIA(M^2)","WYSOKOSC(M)") values ('40','Gdynia','6200,11','8,06');
+Insert into IE72954.MAGAZYNY (MG_ID,NAZWA,"POWIERZCHNIA(M^2)","WYSOKOSC(M)") values ('50','Gdansk','7502,22','14,65');
+REM INSERTING into IE72954.NADAWCY
+SET DEFINE OFF;
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('10','amvwjjvs@naverapp.com','+48405125025','10',null,'100');
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('20','repr332@gmail.com','+48442565045','30','1',null);
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('30','rerrrr22@wp.pl','+48601601222','40','1',null);
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('40','kakawofmdk@gmail.com','+4860598272','110',null,'103');
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('50','poweigrmgr2@wp.pl','+48992401222','70',null,'104');
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('60','wielkie@paki.pl','+48999999999','140',null,'110');
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('70','ugugu@aaa.eu','+48909090909','120','9',null);
+Insert into IE72954.NADAWCY (NA_ID,"E-MAIL",NR_TELEFONU,AD_ID,OP_ID,FI_ID) values ('80','szklane@garnki.pl','+48691692693','50','2',null);
+REM INSERTING into IE72954.ODBIORCY
+SET DEFINE OFF;
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('10','dimoncv@naverapp.com','+48945025295','10',null,'1');
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('20','k2rmax9473@baanr.com','+48990252665','20',null,'2');
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('30','machineshop@pubim.site','+48789402002','30',null,'3');
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('40','loserbh@suppw.site','+48405942592','40',null,'4');
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('50','amlpfe@wp.pl','+48992050242','50','100',null);
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('60','amvwjjvs@naverapp.com','+48992050242','60','101',null);
+Insert into IE72954.ODBIORCY (OD_ID,"E-MAIL",NR_TELEFONU,AD_ID,FI_ID,OP_ID) values ('70','wkpw@gmail.com','+48123421321','130','109',null);
+REM INSERTING into IE72954.OSOBY_PRYWATNE
+SET DEFINE OFF;
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('1','Barbara','Jozwiak');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('2','Jan','Nowak');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('3','Katarzyna','Zalecka');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('4','Tomasz','Kopyto');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('5','Kamil','Rybak');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('6','Karol','Banasik');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('7','Pawel','Melerski');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('8','Zofia','Szklarska');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('9','Jerzy','Zaremba');
+Insert into IE72954.OSOBY_PRYWATNE (OP_ID,IMIE,NAZWISKO) values ('10','Joanna','Kakol');
+REM INSERTING into IE72954.PACZKI
+SET DEFINE OFF;
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('10','20,25','50,1','40,22','Y','10');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('20','25,5','40,29','40,55','Y','10');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('30','17,5','24,45','15,5','N','20');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('40','18,55','5,1','40,22','N','30');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('50','30','40,25','12,6','N','40');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('60','5,05','4,1','10','Y','50');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('70','999','999','999','N','60');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('80','40','5','50','N','70');
+Insert into IE72954.PACZKI (PA_ID,"DLUGOSCCM)","SZEROKOSC(CM)","WYSOKOSC(CM)",CZY_SZKLANE,ZAM_ID) values ('90','14','5','20','N','80');
+REM INSERTING into IE72954.POJAZDY
+SET DEFINE OFF;
+Insert into IE72954.POJAZDY (PO_ID,NUMER_REJESTRACYJNY,"LADOWNOSC(M^3)","MAKSYMALNA_WYSOKOSC(M)") values ('1','ZGL7208','63,54','6,12');
+Insert into IE72954.POJAZDY (PO_ID,NUMER_REJESTRACYJNY,"LADOWNOSC(M^3)","MAKSYMALNA_WYSOKOSC(M)") values ('2','EZD5987','97,54','12,12');
+Insert into IE72954.POJAZDY (PO_ID,NUMER_REJESTRACYJNY,"LADOWNOSC(M^3)","MAKSYMALNA_WYSOKOSC(M)") values ('3','WU14973','67,52','7,12');
+Insert into IE72954.POJAZDY (PO_ID,NUMER_REJESTRACYJNY,"LADOWNOSC(M^3)","MAKSYMALNA_WYSOKOSC(M)") values ('4','SWD1262','33,94','1,12');
+Insert into IE72954.POJAZDY (PO_ID,NUMER_REJESTRACYJNY,"LADOWNOSC(M^3)","MAKSYMALNA_WYSOKOSC(M)") values ('5','STY9612','77,54','16,12');
+REM INSERTING into IE72954.PRACOWNICY
+SET DEFINE OFF;
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('10','Jan','Kolano');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('20','Marta','Wawrzyniak');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('30','Adam','Ciesla');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('40','Franciszek','Wójcik');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('50','Kamil','Gorski');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('60','Oskar','Jaworski');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('70','Patrycja','Brzeziñska');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('80','Adrianna','Lewandowska');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('90','Irena','Marciniak');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('100','Oktawian','Jakubowski');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('110','Kamil','B³aszczyk');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('120','Amir','Jasiñski');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('130','Andrzej','Bulka');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('140','Ignacy','Soko³owski');
+Insert into IE72954.PRACOWNICY (PR_ID,IMIE,NAZWISKO) values ('150','Jan','Kolano');
+REM INSERTING into IE72954."PRACOWNICY-ZMIANY"
+SET DEFINE OFF;
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('10','1');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('10','2');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('20','1');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('20','2');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('30','1');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('40','2');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('50','3');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('50','4');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('60','3');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('70','5');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('80','6');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('90','3');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('100','4');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('110','5');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('120','4');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('130','5');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('140','6');
+Insert into IE72954."PRACOWNICY-ZMIANY" (PRACOWNICY_PR_ID,ZMIANY_ZM_ID) values ('150','6');
+REM INSERTING into IE72954.ZAMOWIENIA
+SET DEFINE OFF;
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('10','2,5',to_date('17/07/16','RR/MM/DD'),to_date('17/07/18','RR/MM/DD'),'22,9','przelew','150','20',null,'50','10');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('20','0,01',to_date('22/01/21','RR/MM/DD'),null,'12,9','przy odbiorze','250','10',null,'60','20');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('30','0,02',to_date('22/01/19','RR/MM/DD'),null,'12,9','przelew','12','30','1000','20','30');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('40','1,2',to_date('22/01/12','RR/MM/DD'),to_date('22/01/14','RR/MM/DD'),'22,9','przy odbiorze','126','30',null,'10','40');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('50','0,85',to_date('22/01/20','RR/MM/DD'),null,'12,9','przelew','35','40','1010','30','50');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('60','100',to_date('22/01/22','RR/MM/DD'),null,'100','przy odbiorze','500','50',null,'50','60');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('70','12',to_date('21/02/21','RR/MM/DD'),to_date('24/02/21','RR/MM/DD'),'12,9','przelew','30','50',null,'70','70');
+Insert into IE72954.ZAMOWIENIA (ZAM_ID,"WAGA(KG)",DATA_NADANIA,DATA_ODEBRANIA,KOSZT_PRZESYLKI,RODZAJ_PLATNOSCI,WARTOSC_TOWARU,MG_ID,KU_ID,OD_ID,NA_ID) values ('80','20',to_date('13/01/22','RR/MM/DD'),to_date('15/01/22','RR/MM/DD'),'12,9','przelew','150','10','1010','10','80');
+REM INSERTING into IE72954.ZMIANY
+SET DEFINE OFF;
+Insert into IE72954.ZMIANY (ZM_ID,CZAS_ZAKONCZENIA,CZAS_ROZPOCZECIA) values ('1',to_date('21/01/25','RR/MM/DD'),to_date('21/01/25','RR/MM/DD'));
+Insert into IE72954.ZMIANY (ZM_ID,CZAS_ZAKONCZENIA,CZAS_ROZPOCZECIA) values ('2',to_date('21/01/25','RR/MM/DD'),to_date('21/01/25','RR/MM/DD'));
+Insert into IE72954.ZMIANY (ZM_ID,CZAS_ZAKONCZENIA,CZAS_ROZPOCZECIA) values ('3',to_date('21/01/26','RR/MM/DD'),to_date('21/01/26','RR/MM/DD'));
+Insert into IE72954.ZMIANY (ZM_ID,CZAS_ZAKONCZENIA,CZAS_ROZPOCZECIA) values ('4',to_date('21/01/26','RR/MM/DD'),to_date('21/01/26','RR/MM/DD'));
+Insert into IE72954.ZMIANY (ZM_ID,CZAS_ZAKONCZENIA,CZAS_ROZPOCZECIA) values ('5',to_date('21/01/27','RR/MM/DD'),to_date('21/01/27','RR/MM/DD'));
+Insert into IE72954.ZMIANY (ZM_ID,CZAS_ZAKONCZENIA,CZAS_ROZPOCZECIA) values ('6',to_date('21/01/27','RR/MM/DD'),to_date('21/01/27','RR/MM/DD'));
+--------------------------------------------------------
+--  DDL for Index KURIERZY__IDX
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."KURIERZY__IDX" ON "IE72954"."KURIERZY" ("PO_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ZAMOWIENIA__IDX
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."ZAMOWIENIA__IDX" ON "IE72954"."ZAMOWIENIA" ("NA_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ZMIANY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."ZMIANY_PK" ON "IE72954"."ZMIANY" ("ZM_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ZAMOWIENIA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."ZAMOWIENIA_PK" ON "IE72954"."ZAMOWIENIA" ("ZAM_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index RELATION_19_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."RELATION_19_PK" ON "IE72954"."PRACOWNICY-ZMIANY" ("PRACOWNICY_PR_ID", "ZMIANY_ZM_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PRACOWNICY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."PRACOWNICY_PK" ON "IE72954"."PRACOWNICY" ("PR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index POJAZDY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."POJAZDY_PK" ON "IE72954"."POJAZDY" ("PO_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PACZKI_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."PACZKI_PK" ON "IE72954"."PACZKI" ("PA_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index OSOBY_PRYWATNE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."OSOBY_PRYWATNE_PK" ON "IE72954"."OSOBY_PRYWATNE" ("OP_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ODBIORCY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."ODBIORCY_PK" ON "IE72954"."ODBIORCY" ("OD_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index NADAWCY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."NADAWCY_PK" ON "IE72954"."NADAWCY" ("NA_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MAGAZYNY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."MAGAZYNY_PK" ON "IE72954"."MAGAZYNY" ("MG_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MAGAZYNIERZY_PKV1
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."MAGAZYNIERZY_PKV1" ON "IE72954"."MAGAZYNIERZY" ("MA_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index MAGAZYNIERZY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."MAGAZYNIERZY_PK" ON "IE72954"."MAGAZYNIERZY" ("PR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index KURIERZY_PKV1
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."KURIERZY_PKV1" ON "IE72954"."KURIERZY" ("KU_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index KURIERZY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."KURIERZY_PK" ON "IE72954"."KURIERZY" ("PR_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index FIRMY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."FIRMY_PK" ON "IE72954"."FIRMY" ("FI_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ADRESY_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "IE72954"."ADRESY_PK" ON "IE72954"."ADRESY" ("AD_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Procedure REGENERATETABLES
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "IE72954"."REGENERATETABLES" IS
+
+BEGIN
+
+DELETE FROM EMPLOYEES;
+DELETE FROM POSITIONS;
+DELETE FROM JOB_GRADES;
+DELETE FROM DEPARTMENTS;
+
+INSERT INTO ie72954.DEPARTMENTS ( DEP_ID, NAME, LOCATION ) VALUES (
+10, 'Zarz¹d', 'Pokój 306');
+INSERT INTO ie72954.DEPARTMENTS ( DEP_ID, NAME, LOCATION ) VALUES (
+20, 'Marketing', 'Pokój 201');
+INSERT INTO ie72954.DEPARTMENTS ( DEP_ID, NAME, LOCATION ) VALUES (
+30, 'Sprzeda¿', 'Pokój 205');
+INSERT INTO ie72954.DEPARTMENTS ( DEP_ID, NAME, LOCATION ) VALUES (
+40, 'Ksiêgowoœæ', 'Pokój 113');
+INSERT INTO ie72954.DEPARTMENTS ( DEP_ID, NAME, LOCATION ) VALUES (
+50, 'Administracja', 'Pokój 100');
+INSERT INTO ie72954.DEPARTMENTS ( DEP_ID, NAME, LOCATION ) VALUES (
+60, 'IT', 'Pokój 120');
+
+INSERT INTO ie72954.POSITIONS ( POS_ID, NAME ) VALUES ( 1, 'Prezes');
+INSERT INTO ie72954.POSITIONS ( POS_ID, NAME ) VALUES ( 2, 'Kierownik');
+INSERT INTO ie72954.POSITIONS ( POS_ID, NAME ) VALUES ( 3, 'Starszy specjalista');
+INSERT INTO ie72954.POSITIONS ( POS_ID, NAME ) VALUES ( 4, 'Specjalista');
+INSERT INTO ie72954.POSITIONS ( POS_ID, NAME ) VALUES ( 5, 'Sta¿ysta');
+
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+1, 'I', 18000, 22000);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+2, 'II', 14500, 17999);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+3, 'III', 11500, 14499);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+4, 'IV', 9000, 11499);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+5, 'V', 7000, 8999);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+6, 'VI', 5000, 6999);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+7, 'VII', 3500, 4999);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+8, 'VIII', 2000, 3499);
+INSERT INTO ie72954.JOB_GRADES ( JG_ID, NAME, MIN_SALARY, MAX_SALARY ) VALUES (
+9, 'IX', 1000, 1999);
+
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+100, 'John', 'Smith', 1, 2, NULL, TO_DATE( '01/01/1999 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 15500, 10, 1700);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+101, 'Jessica', 'Torn', 2, 5, 100, TO_DATE( '05/15/1997 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 8800, 10, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+102, 'Nick', 'Ford', 2, 4, 100, TO_DATE( '09/01/2003 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 9800, 10, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+103, 'Diana', 'Wilson', 2, 5, 100, TO_DATE( '06/01/2001 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 7900, 10, 600);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+104, 'Jennifer', 'Kent', 3, 6, 101, TO_DATE( '04/15/2003 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 5800, 20, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+105, 'David', 'Brown', 4, 8, 104, TO_DATE( '10/01/2002 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 3100, 20, 400);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+106, 'Nicole', 'Foster', 5, 9, 104, TO_DATE( '09/01/2000 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 1800, NULL, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+107, 'Steven', 'Anderson', 3, 6, 101, TO_DATE( '02/15/1998 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 5900, 30, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+108, 'Lisa', 'Davis', 4, 7, 107, TO_DATE( '05/15/1997 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 4200, 30, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+109, 'Anne', 'Taylor', 4, 8, 107, TO_DATE( '07/01/2001 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 3100, 30, 500);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+110, 'Patricia', 'Blake', 5, 9, 107, TO_DATE( '11/15/1998 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 1400, 30, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+111, 'John', 'Parker', 3, 5, 102, TO_DATE( '04/01/2001 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 8000, 40, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+112, 'Nicole', 'Spencer', 4, 7, 111, TO_DATE( '01/01/1997 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 3700, 40, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+113, 'Tom', 'Nichols', 4, 8, 111, TO_DATE( '01/15/2000 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 3200, 40, 300);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+114, 'Robert', 'Brown', 3, 6, 102, TO_DATE( '02/15/2001 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 6400, 50, 600);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+115, 'Barbara', 'Jackson', 5, 9, 114, TO_DATE( '05/01/1999 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 1200, NULL, NULL);
+INSERT INTO ie72954.EMPLOYEES ( EMP_ID, FIRST_NAME, LAST_NAME, POS_ID, JG_ID, MANAGER_ID,
+HIRE_DATE, SALARY, DEP_ID, ALLOWANCE ) VALUES (
+116, 'Tony', 'Watson', 4, 7, 114, TO_DATE( '05/01/1999 12:00:00', 'MM/DD/YYYY HH:MI:SS')
+, 4300, 50, NULL);
+
+COMMIT;
+
+END RegenerateTables;
+
+/
+--------------------------------------------------------
+--  DDL for Synonymn DZIALY
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE SYNONYM "IE72954"."DZIALY" FOR "IE72954"."DEPARTMENTS";
+--------------------------------------------------------
+--  Constraints for Table KURIERZY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."KURIERZY" ADD CONSTRAINT "KURIERZY_PK" PRIMARY KEY ("PR_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."KURIERZY" ADD CONSTRAINT "KURIERZY_PKV1" UNIQUE ("KU_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."KURIERZY" MODIFY ("PR_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."KURIERZY" MODIFY ("KU_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."KURIERZY" MODIFY ("LICENCJA_TRANSPORTOWA" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table FIRMY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."FIRMY" ADD CONSTRAINT "FIRMY_PK" PRIMARY KEY ("FI_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."FIRMY" MODIFY ("FI_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."FIRMY" MODIFY ("NIP" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table NADAWCY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."NADAWCY" ADD CONSTRAINT "ARC_2" CHECK ( ( ( fi_id IS NOT NULL )
+                                   AND ( op_id IS NULL ) )
+                                 OR ( ( op_id IS NOT NULL )
+                                      AND ( fi_id IS NULL ) ) ) ENABLE;
+  ALTER TABLE "IE72954"."NADAWCY" ADD CONSTRAINT "NADAWCY_PK" PRIMARY KEY ("NA_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."NADAWCY" MODIFY ("NA_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."NADAWCY" MODIFY ("E-MAIL" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."NADAWCY" MODIFY ("NR_TELEFONU" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."NADAWCY" MODIFY ("AD_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PACZKI
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."PACZKI" ADD CONSTRAINT "PACZKI_PK" PRIMARY KEY ("PA_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."PACZKI" MODIFY ("PA_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PACZKI" MODIFY ("DLUGOSCCM)" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PACZKI" MODIFY ("SZEROKOSC(CM)" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PACZKI" MODIFY ("WYSOKOSC(CM)" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PACZKI" MODIFY ("CZY_SZKLANE" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PACZKI" MODIFY ("ZAM_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ODBIORCY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."ODBIORCY" ADD CONSTRAINT "ARC_1" CHECK ( ( ( op_id IS NOT NULL )
+                                   AND ( fi_id IS NULL ) )
+                                 OR ( ( fi_id IS NOT NULL )
+                                      AND ( op_id IS NULL ) ) ) ENABLE;
+  ALTER TABLE "IE72954"."ODBIORCY" ADD CONSTRAINT "ODBIORCY_PK" PRIMARY KEY ("OD_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."ODBIORCY" MODIFY ("OD_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ODBIORCY" MODIFY ("E-MAIL" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ODBIORCY" MODIFY ("NR_TELEFONU" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ODBIORCY" MODIFY ("AD_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MAGAZYNY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."MAGAZYNY" ADD CONSTRAINT "MAGAZYNY_PK" PRIMARY KEY ("MG_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."MAGAZYNY" MODIFY ("MG_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."MAGAZYNY" MODIFY ("POWIERZCHNIA(M^2)" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."MAGAZYNY" MODIFY ("WYSOKOSC(M)" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ZAMOWIENIA
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."ZAMOWIENIA" MODIFY ("ZAM_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZAMOWIENIA" MODIFY ("WAGA(KG)" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZAMOWIENIA" MODIFY ("DATA_NADANIA" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZAMOWIENIA" MODIFY ("KOSZT_PRZESYLKI" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZAMOWIENIA" MODIFY ("OD_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZAMOWIENIA" MODIFY ("NA_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZAMOWIENIA" ADD CONSTRAINT "ZAMOWIENIA_PK" PRIMARY KEY ("ZAM_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table POJAZDY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."POJAZDY" ADD CONSTRAINT "POJAZDY_PK" PRIMARY KEY ("PO_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."POJAZDY" MODIFY ("PO_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."POJAZDY" MODIFY ("NUMER_REJESTRACYJNY" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."POJAZDY" MODIFY ("LADOWNOSC(M^3)" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."POJAZDY" MODIFY ("MAKSYMALNA_WYSOKOSC(M)" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PRACOWNICY-ZMIANY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."PRACOWNICY-ZMIANY" ADD CONSTRAINT "RELATION_19_PK" PRIMARY KEY ("PRACOWNICY_PR_ID", "ZMIANY_ZM_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."PRACOWNICY-ZMIANY" MODIFY ("PRACOWNICY_PR_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PRACOWNICY-ZMIANY" MODIFY ("ZMIANY_ZM_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ADRESY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."ADRESY" ADD CONSTRAINT "ADRESY_PK" PRIMARY KEY ("AD_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."ADRESY" MODIFY ("AD_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ADRESY" MODIFY ("ULICA" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ADRESY" MODIFY ("NUMER_DOMU" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ADRESY" MODIFY ("MIEJSCOWOSC" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ADRESY" MODIFY ("KOD_POCZTOWY" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ZMIANY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."ZMIANY" MODIFY ("ZM_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZMIANY" MODIFY ("CZAS_ZAKONCZENIA" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZMIANY" MODIFY ("CZAS_ROZPOCZECIA" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."ZMIANY" ADD CONSTRAINT "ZMIANY_PK" PRIMARY KEY ("ZM_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRACOWNICY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."PRACOWNICY" ADD CONSTRAINT "PRACOWNICY_PK" PRIMARY KEY ("PR_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."PRACOWNICY" MODIFY ("PR_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PRACOWNICY" MODIFY ("IMIE" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."PRACOWNICY" MODIFY ("NAZWISKO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MAGAZYNIERZY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" ADD CONSTRAINT "MAGAZYNIERZY_PK" PRIMARY KEY ("PR_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" ADD CONSTRAINT "MAGAZYNIERZY_PKV1" UNIQUE ("MA_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" MODIFY ("PR_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" MODIFY ("MA_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" MODIFY ("MG_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table OSOBY_PRYWATNE
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."OSOBY_PRYWATNE" ADD CONSTRAINT "OSOBY_PRYWATNE_PK" PRIMARY KEY ("OP_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "IE72954"."OSOBY_PRYWATNE" MODIFY ("OP_ID" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."OSOBY_PRYWATNE" MODIFY ("IMIE" NOT NULL ENABLE);
+  ALTER TABLE "IE72954"."OSOBY_PRYWATNE" MODIFY ("NAZWISKO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table KURIERZY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."KURIERZY" ADD CONSTRAINT "KURIERZY_POJAZDY_FK" FOREIGN KEY ("PO_ID")
+	  REFERENCES "IE72954"."POJAZDY" ("PO_ID") ENABLE;
+  ALTER TABLE "IE72954"."KURIERZY" ADD CONSTRAINT "KURIERZY_PRACOWNICY_FK" FOREIGN KEY ("PR_ID")
+	  REFERENCES "IE72954"."PRACOWNICY" ("PR_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MAGAZYNIERZY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" ADD CONSTRAINT "MAGAZYNIERZY_MAGAZYNIERZY_FK" FOREIGN KEY ("MA_ID1")
+	  REFERENCES "IE72954"."MAGAZYNIERZY" ("MA_ID") ENABLE;
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" ADD CONSTRAINT "MAGAZYNIERZY_MAGAZYNY_FK" FOREIGN KEY ("MG_ID")
+	  REFERENCES "IE72954"."MAGAZYNY" ("MG_ID") ENABLE;
+  ALTER TABLE "IE72954"."MAGAZYNIERZY" ADD CONSTRAINT "MAGAZYNIERZY_PRACOWNICY_FK" FOREIGN KEY ("PR_ID")
+	  REFERENCES "IE72954"."PRACOWNICY" ("PR_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table NADAWCY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."NADAWCY" ADD CONSTRAINT "NADAWCY_ADRESY_FK" FOREIGN KEY ("AD_ID")
+	  REFERENCES "IE72954"."ADRESY" ("AD_ID") ENABLE;
+  ALTER TABLE "IE72954"."NADAWCY" ADD CONSTRAINT "NADAWCY_FIRMY_FK" FOREIGN KEY ("FI_ID")
+	  REFERENCES "IE72954"."FIRMY" ("FI_ID") ENABLE;
+  ALTER TABLE "IE72954"."NADAWCY" ADD CONSTRAINT "NADAWCY_OSOBY_PRYWATNE_FK" FOREIGN KEY ("OP_ID")
+	  REFERENCES "IE72954"."OSOBY_PRYWATNE" ("OP_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ODBIORCY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."ODBIORCY" ADD CONSTRAINT "ODBIORCY_ADRESY_FK" FOREIGN KEY ("AD_ID")
+	  REFERENCES "IE72954"."ADRESY" ("AD_ID") ENABLE;
+  ALTER TABLE "IE72954"."ODBIORCY" ADD CONSTRAINT "ODBIORCY_FIRMY_FK" FOREIGN KEY ("FI_ID")
+	  REFERENCES "IE72954"."FIRMY" ("FI_ID") ENABLE;
+  ALTER TABLE "IE72954"."ODBIORCY" ADD CONSTRAINT "ODBIORCY_OSOBY_PRYWATNE_FK" FOREIGN KEY ("OP_ID")
+	  REFERENCES "IE72954"."OSOBY_PRYWATNE" ("OP_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PACZKI
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."PACZKI" ADD CONSTRAINT "PACZKI_ZAMOWIENIA_FK" FOREIGN KEY ("ZAM_ID")
+	  REFERENCES "IE72954"."ZAMOWIENIA" ("ZAM_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PRACOWNICY-ZMIANY
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."PRACOWNICY-ZMIANY" ADD CONSTRAINT "RELATION_19_PRACOWNICY_FK" FOREIGN KEY ("PRACOWNICY_PR_ID")
+	  REFERENCES "IE72954"."PRACOWNICY" ("PR_ID") ENABLE;
+  ALTER TABLE "IE72954"."PRACOWNICY-ZMIANY" ADD CONSTRAINT "RELATION_19_ZMIANY_FK" FOREIGN KEY ("ZMIANY_ZM_ID")
+	  REFERENCES "IE72954"."ZMIANY" ("ZM_ID") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ZAMOWIENIA
+--------------------------------------------------------
+
+  ALTER TABLE "IE72954"."ZAMOWIENIA" ADD CONSTRAINT "ZAMOWIENIA_KURIERZY_FK" FOREIGN KEY ("KU_ID")
+	  REFERENCES "IE72954"."KURIERZY" ("KU_ID") ENABLE;
+  ALTER TABLE "IE72954"."ZAMOWIENIA" ADD CONSTRAINT "ZAMOWIENIA_MAGAZYNY_FK" FOREIGN KEY ("MG_ID")
+	  REFERENCES "IE72954"."MAGAZYNY" ("MG_ID") ENABLE;
+  ALTER TABLE "IE72954"."ZAMOWIENIA" ADD CONSTRAINT "ZAMOWIENIA_NADAWCY_FK" FOREIGN KEY ("NA_ID")
+	  REFERENCES "IE72954"."NADAWCY" ("NA_ID") ENABLE;
+  ALTER TABLE "IE72954"."ZAMOWIENIA" ADD CONSTRAINT "ZAMOWIENIA_ODBIORCY_FK" FOREIGN KEY ("OD_ID")
+	  REFERENCES "IE72954"."ODBIORCY" ("OD_ID") ENABLE;
