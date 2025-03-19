@@ -1,1 +1,1 @@
-Example of database model for delivery company.
+Example of a database model with sample queries for it.
